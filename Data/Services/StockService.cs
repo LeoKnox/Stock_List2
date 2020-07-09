@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Stocks.Data
 {
@@ -14,10 +15,7 @@ namespace Stocks.Data
             throw new System.NotImplementedException();
         }
 
-        public List<Stock> GetAllStocks()
-        {
-            throw new System.NotImplementedException();
-        }
+        public List<Stock> GetAllStocks() => Data.Stock.ToList();
 
         public Stock GetStockById(int stockId)
         {
