@@ -19,6 +19,13 @@ namespace Stocks.Controllers
             return Ok(allStocks);
         }
 
+        [HttpGet("SingleStock/{id}")]
+        public IActionResult GetStockById(int id)
+        {
+            var stock = _service.GetStockById(id);
+            return Ok(stock);
+        }
+
         [HttpPost("action")]
         public IActionResult AddStock([FromBody]Stock stock)
         {
@@ -34,6 +41,13 @@ namespace Stocks.Controllers
         {
             _service.UpdateStock(id,stock);
             return Ok(stock);
+        }
+
+        [HttpDelete("DeleteStock/{id}")]
+        public IActionResult DeleteStock(int id)
+        {
+            _service.DeleteStock(id);
+            return Ok();
         }
     }
 }
