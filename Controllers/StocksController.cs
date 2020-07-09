@@ -28,5 +28,12 @@ namespace Stocks.Controllers
             }
             return Ok();
         }
+
+        [HttpPut("UpdateStock/{id}")]
+        public IActionResult UpdateStock(int id, [FromBody]Stock stock)
+        {
+            _service.UpdateStock(id,stock);
+            return Ok(stock);
+        }
     }
 }
